@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="profile">
+		
+		<img src="{{current_user.avatar(128)}}" alt="avatar" class="profile-avt">
+		<div class="profile-conent">
+			<h1 class="profile-heading">{{current_user.username}}</h1>
+			<p>
+				{% if current_user.name %}{{ current_user.name }}{% endif %}
+				<br>
+				{% if current_user.location %}
+				from 
+				<a href="http://maps.google.com/?q={{ current_user.location }}">
+				{{ current_user.location }}
+				</a>
+				{% endif %}
+				{% if current_user.email %}
+				<p><a href="mailto:{{ current_user.email }}">{{ current_user.email }}</a></p>
+				{% endif %}
+				{% if current_user.about_me %}<p>{{ current_user.about_me }}</p>{% endif %}
+				<p>
+				Member since {{ current_user.member_since }}.
+				Last seen {{ current_user.last_seen }}.
+				</p>
+			</p>
+			<a href="{{ url_for('edit_profile', id=current_user.id)}}" class="btn btn-secondary btn-sm">Edit Profile</a>
+		</div>	
+	</div>
+
+{% endblock %}

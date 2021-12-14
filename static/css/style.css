@@ -1,0 +1,29 @@
+h1 {
+	color: darkblue;
+	font-size:60px;
+}
+
+body {
+	background: #f4f4f4;
+}
+
+#demo{
+	font-size: 12px;
+	color: darkblue;
+}
+
+.profile {
+	margin-top: 50px;
+	display: flex;
+}
+
+.profile-avt {
+	height: 300px;
+	width: 300px;
+	margin-right: 50px;
+}
+
+.profile-heading {
+	font-size: 40px;
+	color: #333;
+}
